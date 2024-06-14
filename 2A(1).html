@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSVP Confirmation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      background-image: url("10.jpeg");
+      background-size: cover;
+      color: #333;
+    }
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      opacity: 0.9;
+    }
+    h1, p, table, th, td {
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    .form-input, .feedback-form {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .form-input input, .form-input select, .feedback-form textarea, .feedback-form input {
+      padding: 10px;
+      margin: 5px;
+      width: 90%;
+    }
+    .submit-btn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-decoration: none;
+      margin-top: 10px;
+      display: inline-block;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>RSVP Confirmation</h1>
+    <p>Thank you for your response! Please fill in the details below:</p>
+
+    <div class="form-input">
+      <form action="submit-rsvp.php" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <select name="attendance" required>
+          <option value="">Will you attend?</option>
+          <option value="Yes">Yes, I will be there!</option>
+          <option value="No">No, I will miss the fun.</option>
+        </select>
+        <button type="submit" class="submit-btn">Submit RSVP</button>
+      </form>
+    </div>
+
+    <h2>Guest List</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>RSVP Status</th>
+      </tr>
+      <tr>
+        <td>John Doe</td>
+        <td>Attending</td>
+      </tr>
+      <tr>
+        <td>Jane Smith</td>
+        <td>Maybe</td>
+      </tr>
+      
+    </table>
+
+    
+    <h2>Feedback Form</h2>
+    <div class="feedback-form">
+      <form action="submit-feedback.php" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <textarea name="feedback" rows="5" placeholder="Your feedback about the party or RSVP process" required></textarea>
+        <button type="submit" class="submit-btn">Submit Feedback</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
